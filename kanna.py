@@ -9,9 +9,9 @@ if text == '':
 else:
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
 ).json()
-a = r.get("message")
-iurl = url(a)
-with open("temp.png", "wb") as f:
-    f.write(requests.get(a).content)
-img = Image.open("temp.png").convert("RGB")
-st.image(img)
+    a = r.get("message")
+    iurl = url(a)
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(a).content)
+    img = Image.open("temp.png").convert("RGB")
+    st.image(img)
