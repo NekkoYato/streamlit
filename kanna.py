@@ -4,7 +4,8 @@ from PIL import Image
 from validators.url import url
 st.title('Kanna Says!!')
 text = st.text_input("What do you want kanna to say?\n")
-r = requests.get(
+while text !='':
+    r = requests.get(
     f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
 a = r.get("message")
