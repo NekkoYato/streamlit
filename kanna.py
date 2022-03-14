@@ -5,8 +5,7 @@ from validators.url import url
 st.title('Kanna Says!!')
 text = st.text_input("What do you want kanna to say?\n")
 if text == '':
-    r = requests.get(f"https://nekobot.xyz/api/imagegen?type=kannagen&text=+"
-).json()
+    st.write("Type something!!")
 else:
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
 ).json()
